@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" data-repo="simpletoolsindia/adm">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADM — Anything Download Manager</title>
+  <meta name="description" content="ADM is a fast download manager for Windows, macOS and Linux: multi-connection downloads, resume, torrents, video streams, a scheduler, a site grabber and browser integration.">
+  <meta property="og:title" content="ADM — Anything Download Manager">
+  <meta property="og:description" content="Fast, resumable downloads for Windows, macOS and Linux, with torrents, video streams and browser integration.">
+  <meta property="og:image" content="img/main.png">
+  <meta name="theme-color" content="#0d1117">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="img/icon-192.png" alt="">ADM</a>
+    <nav class="links">
+      <a href="#features">Features</a>
+      <a href="#screens">Screenshots</a>
+      <a href="#extension">Browser extension</a>
+      <a href="#faq">FAQ</a>
+      <a class="keep" href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Anything Download Manager</div>
+      <h1>Downloads that use <span class="grad">every connection</span> you've got.</h1>
+      <p class="lead">ADM splits each file across up to 32 connections, keeps splitting as parts finish, and picks up where it left off after a crash, a reboot or a dropped Wi-Fi. For Windows, macOS and Linux.</p>
+      <div class="cta">
+        <a class="btn primary" id="hero-download" href="#download">
+          <svg viewBox="0 0 24 24"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17z"/><path d="M5 19h14v2H5z"/></svg>
+          <span>Download ADM</span>
+        </a>
+        <a class="btn" href="#extension">Get the browser extension</a>
+      </div>
+      <div class="segments" aria-hidden="true">
+        <span style="--d:3.6s"></span><span style="--d:4.4s;--delay:.2s"></span><span style="--d:3.2s;--delay:.4s"></span><span style="--d:4.8s;--delay:.1s"></span>
+        <span style="--d:3.9s;--delay:.3s"></span><span style="--d:4.1s;--delay:.5s"></span><span style="--d:3.4s;--delay:.2s"></span><span style="--d:4.6s;--delay:.6s"></span>
+      </div>
+      <div class="seg-caption" aria-hidden="true">one file · 8 connections · each fills its own segment</div>
+    </div>
+
+    <div class="shot">
+      <div class="bar"><i></i><i></i><i></i><b>ADM — Anything Download Manager</b></div>
+      <picture>
+        <source srcset="img/light.png" media="(prefers-color-scheme: light)">
+        <img src="img/main.png" width="1600" height="960" alt="ADM's main window: a list of downloads with progress, size, time left and transfer rate, and categories in the sidebar">
+      </picture>
+    </div>
+
+    <div class="stats">
+      <div><strong>32</strong><span>connections per download</span></div>
+      <div><strong>Resume</strong><span>after crashes and restarts</span></div>
+      <div><strong>6 protocols</strong><span>HTTP(S), FTP, BitTorrent, HLS, DASH</span></div>
+      <div><strong>5 languages</strong><span>English, Español, Français, Deutsch, 简体中文</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Features</div>
+    <h2>Everything a download manager should do</h2>
+    <p class="sub">The parts you'd expect from a serious downloader, built as one fast native app in Rust.</p>
+    <div class="grid">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 5h4v14H3zm7 0h4v14h-4zm7 0h4v14h-4z"/></svg></div>
+        <h3>Dynamic segmentation</h3><p>Files are split across many connections. When one part finishes, its connection takes half of the largest part still running, so every connection stays busy until the end.</p></div>
+      <div class="card" style="--c:#3fb950"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/></svg></div>
+        <h3>Resume that survives crashes</h3><p>Progress is checkpointed safely to disk. Pause, quit, lose power or change networks, and the download continues from where it stopped. Expired links can be refreshed without starting over.</p></div>
+      <div class="card" style="--c:#a371f7"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H5.17L4 17.17zm0-2a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg></div>
+        <h3>Browser integration</h3><p>The extension hands downloads from Chrome, Edge, Brave and Firefox to ADM, and offers a “Download video” button on pages with video.</p></div>
+      <div class="card" style="--c:#e5487f"><div class="ico"><svg viewBox="0 0 24 24"><path d="M10 8v8l6-4zm11-5H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H3V5h18z"/></svg></div>
+        <h3>Video and stream downloads</h3><p>Saves HLS and DASH streams as a single MP4 (with ffmpeg), letting you pick the quality. Protected (DRM) and encrypted streams are left alone.</p></div>
+      <div class="card" style="--c:#f0883e"><div class="ico"><svg viewBox="0 0 24 24"><path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99zM9 3 5 6.99h3V14h2V6.99h3z"/></svg></div>
+        <h3>BitTorrent built in</h3><p>Magnet links and .torrent files, with file selection, DHT, UPnP, seeding controls and upload limits, in the same list as everything else.</p></div>
+      <div class="card" style="--c:#d29922"><div class="ico"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16a6.47 6.47 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+        <h3>Site grabber</h3><p>Collect every image, video, document or archive from a site, or mirror it for offline reading, with depth, size and robots.txt rules. Save projects and run them on a schedule.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+        <h3>Scheduler and queues</h3><p>Several queues, each with its own start and stop times, days, simultaneous file limit and retries. When a queue finishes, ADM can quit, sleep or shut down the computer.</p></div>
+      <div class="card" style="--c:#3fb950"><div class="ico"><svg viewBox="0 0 24 24"><path d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0-.27-10.44zm-9.79 6.84a2 2 0 0 0 2.83 0l5.66-8.49-8.49 5.66a2 2 0 0 0 0 2.83z"/></svg></div>
+        <h3>Speed limits and quotas</h3><p>A global limit, a per-download limit, fewer connections for picky servers, and a download quota per time window for metered connections.</p></div>
+      <div class="card" style="--c:#a371f7"><div class="ico"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18A3 3 0 0 0 12 1a3 3 0 0 0-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 16H5V5h2v3h10V5h2z"/></svg></div>
+        <h3>Clipboard, batch and drag &amp; drop</h3><p>Copy a link and ADM offers it. Paste a page of links, generate numbered sequences like <code>img001…img250</code>, or drop links and files onto the window.</p></div>
+      <div class="card" style="--c:#e5487f"><div class="ico"><svg viewBox="0 0 24 24"><path d="M10 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8z"/></svg></div>
+        <h3>Categories</h3><p>Compressed, documents, music, video, programs and images each get their own folder automatically, or add your own categories by file type and site.</p></div>
+      <div class="card" style="--c:#f0883e"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11z"/></svg></div>
+        <h3>Logins, proxies and safety</h3><p>Saved site logins, HTTP and SOCKS proxies, a virus scan after each download, and the operating system's “downloaded from the internet” marks on every file.</p></div>
+      <div class="card" style="--c:#d29922"><div class="ico"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 14H4V8h16zM6 10l4 3-4 3zm6 5h6v1h-6z"/></svg></div>
+        <h3>Command line</h3><p>Add downloads from scripts with <code>adm --add URL --dir PATH --silent</code>. If ADM is already open, the command goes to the running window.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="screens">
+  <div class="wrap">
+    <div class="eyebrow">Screenshots</div>
+    <h2>A familiar layout, without the clutter</h2>
+    <p class="sub">A classic download-manager window: big toolbar, categories on the left, everything about each download one click away. It follows your system's light or dark mode.</p>
+    <div class="gallery">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-img="img/progress.png" data-caption="Each download's window shows its connections at work: the pink marks are where each segment started.">Progress</button>
+        <button role="tab" aria-selected="false" data-img="img/scheduler.png" data-caption="Queues with their own schedules, limits and retries, and what to do when they finish.">Scheduler</button>
+        <button role="tab" aria-selected="false" data-img="img/grabber.png" data-caption="The site grabber walks a site and collects the files you ask for, with filters and offline mirroring.">Site grabber</button>
+        <button role="tab" aria-selected="false" data-img="img/options.png" data-caption="Options: notifications, clipboard watching, a virus scan after each download, language and appearance.">Options</button>
+        <button role="tab" aria-selected="false" data-img="img/light.png" data-caption="Light mode, following the system setting.">Light mode</button>
+      </div>
+      <figure class="shot">
+        <img id="gallery-img" src="img/progress.png" width="1600" height="960" alt="" loading="lazy">
+      </figure>
+      <figure><figcaption id="gallery-caption">Each download's window shows its connections at work: the pink marks are where each segment started.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="extension" class="alt">
+  <div class="wrap two">
+    <div>
+      <div class="eyebrow">Browser extension</div>
+      <h2>Catch downloads and videos straight from the browser</h2>
+      <ul class="browsers">
+        <li>Chrome</li><li>Edge</li><li>Brave</li><li>Other Chromium browsers</li><li>Firefox 128+</li>
+      </ul>
+      <ul class="checks">
+        <li>Clicked downloads of the file types you choose go to ADM. If ADM isn't running, the browser keeps the download, so nothing is lost.</li>
+        <li>Videos and streams playing on a page are listed in the toolbar popup, and a <strong>Download video</strong> button appears over the player.</li>
+        <li>Right-click <strong>Download with ADM</strong>, or <strong>Download all links with ADM</strong> to pick files from a whole page.</li>
+        <li>Magnet links open in ADM's torrent dialog.</li>
+        <li class="no">YouTube isn't supported, and DRM-protected or encrypted streams are never downloaded.</li>
+      </ul>
+      <div class="callout">The extension only talks to ADM on your own computer (<code>127.0.0.1</code>). It sends nothing anywhere else. See the <a href="privacy.html">privacy policy</a>.</div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Install it</h3>
+      <p style="margin-bottom:16px">Store listings are on the way. Until then, ADM ships the extension in its own folder:</p>
+      <ol class="steps">
+        <li>In ADM, open <strong>Options → Browser</strong> and click <strong>Show extension folder</strong>.</li>
+        <li>Open <code>chrome://extensions</code> (or <code>edge://</code>, <code>brave://</code>…) and switch on <strong>Developer mode</strong>.</li>
+        <li>Click <strong>Load unpacked</strong> and choose the <code>extension</code> folder.</li>
+        <li>Pin ADM to the toolbar. The popup shows whether it's connected to the app.</li>
+      </ol>
+      <p style="margin-top:16px">Firefox: open <code>about:debugging</code> → <strong>This Firefox</strong> → <strong>Load Temporary Add-on</strong>, pick <code>manifest.json</code>, then paste the pairing token from ADM into the add-on's preferences.</p>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="eyebrow">Download</div>
+    <h2>Get ADM</h2>
+    <p class="sub" id="release-line">The latest release for each system. The browser extension is included in every download.</p>
+    <div class="platforms">
+      <div class="card platform" data-os="windows">
+        <header><svg viewBox="0 0 24 24"><path d="M3 5.5 10 4.5v7H3zm0 13 7 1v-7H3zm8 1.2L21 21v-8.5H11zm0-15.4v7.2h10V3z"/></svg><h3>Windows</h3></header>
+        <p>Windows 10 and 11, 64-bit.</p>
+        <div class="links">
+          <a data-asset="Setup.*\.exe$" href="#">Installer <span>.exe</span></a>
+          <a data-asset="windows-x64\.zip$" href="#">Portable <span>.zip</span></a>
+        </div>
+      </div>
+      <div class="card platform" data-os="mac">
+        <header><svg viewBox="0 0 24 24"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46a4.2 4.2 0 0 0-3.32-1.8c-1.4-.14-2.75.83-3.46.83-.72 0-1.82-.81-3-.79a4.43 4.43 0 0 0-3.74 2.28c-1.6 2.77-.41 6.86 1.14 9.1.76 1.1 1.66 2.33 2.84 2.29 1.14-.05 1.57-.74 2.95-.74 1.37 0 1.76.74 2.96.71 1.22-.02 2-1.11 2.74-2.21a9.7 9.7 0 0 0 1.25-2.56 3.95 3.95 0 0 1-2.32-3.65zM14.1 5.86A3.96 3.96 0 0 0 15.04 3a4.04 4.04 0 0 0-2.62 1.36 3.77 3.77 0 0 0-.96 2.76 3.34 3.34 0 0 0 2.64-1.26z"/></svg><h3>macOS</h3></header>
+        <p>macOS 11 or later.</p>
+        <div class="links">
+          <a data-asset="\.dmg$" href="#">Disk image <span>.dmg</span></a>
+          <a data-asset="macos.*\.zip$" href="#">App <span>.zip</span></a>
+        </div>
+      </div>
+      <div class="card platform" data-os="linux">
+        <header><svg viewBox="0 0 24 24"><path d="M12 2c-1.9 0-3 1.6-3 3.7 0 1.3.2 2.2-.6 3.6-.8 1.3-2.9 3.6-2.9 6.4 0 .7.1 1.3.4 1.8-.7.4-1.4 1-1.4 1.7 0 1.1 1.7 1.3 3 1.6 1 .2 1.7.9 2.8.9.8 0 1.4-.4 1.7-.9h1.9c.3.5.9.9 1.7.9 1.1 0 1.8-.7 2.8-.9 1.3-.3 3-.5 3-1.6 0-.7-.7-1.3-1.4-1.7.3-.5.4-1.1.4-1.8 0-2.8-2.1-5.1-2.9-6.4-.8-1.4-.6-2.3-.6-3.6C15 3.6 13.9 2 12 2zm-1.4 4.2c.4 0 .7.5.7 1.1s-.3 1.1-.7 1.1-.7-.5-.7-1.1.3-1.1.7-1.1zm2.8 0c.4 0 .7.5.7 1.1s-.3 1.1-.7 1.1-.7-.5-.7-1.1.3-1.1.7-1.1zM12 9.5c.9 0 2 .6 2 1s-1.1 1-2 1-2-.6-2-1 1.1-1 2-1z"/></svg><h3>Linux</h3></header>
+        <p>x86-64 and ARM64, with an install script for the menu and file associations.</p>
+        <div class="links">
+          <a data-asset="linux-amd64\.tar\.gz$" href="#">x86-64 <span>.tar.gz</span></a>
+          <a data-asset="linux-arm64\.tar\.gz$" href="#">ARM64 <span>.tar.gz</span></a>
+        </div>
+      </div>
+    </div>
+    <p class="release-note">Looking for older versions? See <a id="all-releases" href="#">all releases</a>. On macOS, if the first launch is blocked, open <strong>System Settings → Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>.</p>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2>Questions</h2>
+    <div class="faq">
+      <details><summary>Why are downloads faster with ADM?</summary>
+        <p>Many servers limit how fast a single connection can go. ADM opens several connections to the same file, each fetching a different part, and keeps re-dividing the remaining work so no connection sits idle. It only helps when the server allows partial downloads, which most do; ADM shows whether a file can be resumed before it starts.</p></details>
+      <details><summary>Can it download any video on any site?</summary>
+        <p>It downloads videos and HLS or DASH streams that a site plays openly. It won't touch DRM-protected or encrypted streams, and it doesn't support YouTube. Please only download what you have the right to.</p></details>
+      <details><summary>What happens if my computer restarts in the middle of a download?</summary>
+        <p>ADM saves its progress safely as it goes. Open it again and press Resume: it checks that the file on the server hasn't changed, then continues from the saved position. If the link has expired, paste a fresh one in the download's properties and it carries on.</p></details>
+      <details><summary>Does ADM collect any data?</summary>
+        <p>No. There's no account, no analytics and no tracking. If “Check for updates” is on, ADM asks GitHub once a week whether a newer release exists. The browser extension only talks to ADM on your own computer.</p></details>
+      <details><summary>Which languages are available?</summary>
+        <p>English, Spanish, French, German and Simplified Chinese. ADM follows your system language, or you can choose one in Options → General.</p></details>
+      <details><summary>Can I add downloads from scripts?</summary>
+        <p>Yes: <code>adm --add URL [--dir PATH] [--name FILE] [--silent] [--later]</code>, and <code>adm --start-queue</code>. Run <code>adm --help</code> for everything.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>ADM — Anything Download Manager</span>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a id="repo-link" href="#">GitHub</a>
+      <a id="issues-link" href="#">Report a problem</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

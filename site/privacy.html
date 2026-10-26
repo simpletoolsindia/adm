@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-repo="simpletoolsindia/adm">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — ADM</title>
+  <meta name="description" content="What the ADM app and browser extension do with your data: nothing leaves your computer.">
+  <meta name="theme-color" content="#0d1117">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon-192.png" alt="">ADM</a>
+    <nav class="links"><a class="keep" href="./#download">Download</a></nav>
+  </div>
+</header>
+
+<main class="wrap prose">
+  <h1>Privacy Policy</h1>
+  <p>Last updated: 26 October 2026</p>
+
+  <p><strong>In short: ADM and its browser extension don't collect, sell or share any personal data.</strong> There are no accounts, no analytics, no ads and no tracking. The extension talks only to the ADM app on your own computer.</p>
+
+  <h2>The browser extension</h2>
+  <p>The extension's job is to hand downloads from your browser to the ADM app. It sends information only to ADM's local address, <code>http://127.0.0.1</code> (port 9614 by default), on the same computer. Nothing is sent to us or to any other server.</p>
+  <p>When you download something with ADM, the extension passes this to the app:</p>
+  <table>
+    <tr><th>What</th><th>Why</th></tr>
+    <tr><td>The address of the file, video or stream</td><td>So ADM can download it.</td></tr>
+    <tr><td>The address and title of the page it came from</td><td>Many sites only serve files to visitors coming from their own pages; the title names saved videos.</td></tr>
+    <tr><td>Your cookies for the file's site</td><td>So downloads that need you to be signed in work in ADM as they do in the browser.</td></tr>
+    <tr><td>Your browser's user agent</td><td>Some servers send different files to different browsers.</td></tr>
+  </table>
+  <p>This happens only for downloads ADM takes: file types you've chosen in the extension's options, a video or link you send with the button or context menu, or the links you pick with “Download all links”. The extension does not record your browsing history.</p>
+  <p>To find videos, the extension looks at the type of each response a tab receives (for example <code>video/mp4</code>, or a stream playlist) and keeps a short list of them for that tab, in memory, until you leave the page. YouTube pages are ignored.</p>
+  <p>Its settings (whether it's on, which file types to catch, sites to skip, the port and pairing token for ADM) are stored in your browser's local extension storage and never leave your computer.</p>
+
+  <h2>Permissions the extension asks for</h2>
+  <table>
+    <tr><th>Permission</th><th>Used for</th></tr>
+    <tr><td>downloads</td><td>Noticing when you start a download, and cancelling the browser's copy once ADM has taken it.</td></tr>
+    <tr><td>webRequest and access to all sites</td><td>Spotting videos and streams a page plays, and reading a page's links when you ask to download them. The extension works on whatever site you download from, so it needs access to all of them.</td></tr>
+    <tr><td>cookies</td><td>Passing your cookies for a file's site to ADM, as described above.</td></tr>
+    <tr><td>contextMenus</td><td>The “Download with ADM” and “Download all links with ADM” menu items.</td></tr>
+    <tr><td>scripting, activeTab</td><td>Collecting links from the current page when you choose “Download all links”.</td></tr>
+    <tr><td>storage</td><td>Saving the extension's settings.</td></tr>
+  </table>
+
+  <h2>The ADM app</h2>
+  <p>ADM downloads the files you ask for, directly from the sites that host them, using the proxy you configure if any. Your download list, settings and saved site logins are stored in files on your computer that only your user account can read.</p>
+  <p>If <strong>Check for new versions</strong> is on (Options → General), ADM asks GitHub's public releases API about once a week whether a newer version exists. That request carries no personal information beyond what any web request does (your IP address, seen by GitHub). Turn the option off to stop it.</p>
+  <p>Torrents work by connecting to other people sharing the same files. As with any BitTorrent client, those peers can see your IP address while you download or share.</p>
+
+  <h2>Children</h2>
+  <p>ADM isn't directed at children and doesn't knowingly collect any information from anyone.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version will be posted on this page with a new date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about privacy: <a id="issues-link" href="#">open an issue on GitHub</a>.</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>ADM — Anything Download Manager</span>
+    <nav><a href="./">Home</a><a id="repo-link" href="#">GitHub</a></nav>
+  </div>
+</footer>
+<script>
+  (() => {
+    const repo = document.documentElement.dataset.repo;
+    document.getElementById("repo-link").href = `https://github.com/${repo}`;
+    document.getElementById("issues-link").href = `https://github.com/${repo}/issues`;
+  })();
+</script>
+</body>
+</html>
