@@ -1,0 +1,6 @@
+# build outputs
+/adm
+/adm.exe
+/adm-*
+*.wdmstate
+/dist/
